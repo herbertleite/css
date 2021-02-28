@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pitagora</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="js.js"></script>
+    <!-- Remember to include jQuery :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="sides">
+            <a href="#ex2" class="logo" rel="modal:open">INSTRUÇÕES</a>
+
+        </div>
+        <div class="sides"></div>
+        <div class="info">
+            <a class="author"></a><br> Por Herbert Leite Soares Em 26 de Fevereiro de 2021
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <nav>
+        <div id="linha-um">
+        </div>
+        <div id="linha-dois"></div>
+        <div id="triangulo-um"></div>
+        <div id="triangulo-dois"></div>
+        <div id="t">T</div>
+        <div id="h">h</div>
+        <div id="a">A</div>
+        <div id="l">L</div>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <form id="my_form" class="custom" onsubmit="faz_leitura(this); return false; ">
+        <h1>Relações Métricas no Triângulo Retângulo</h1>
+
+        <input type="text" id="valor1" placeholder="verde" class="verde" autocomplete="off" />
+        <input type="text" id="valor2" placeholder="roxo" class="roxo" autocomplete="off" /><br>
+
+
+        <button type="submit" class="btn" onclick="verifica()">Calcula</button><br>
+        <a href="#ex1" rel="modal:open" class="btn" onclick="resultado()">Resultado</a>
+        <br/>
+    </form>
+
+    <audio controls autoplay id="audio-id">
+        <source src="mundo_bita_matemagicamente_ft_casuarina_21894084172303764.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+        </audio>
+
+    <div id="ex1" class="modal">
+        <img src="pitagoras.jpg" width="440" alt="">
+        <table>
+            <tr>
+                <td id="r1">.</td>
+                <td>/</td>
+                <td>h</td>
+                <td>=</td>
+                <td>h</td>
+                <td>/</td>
+                <td id="r2">.</td>
+                <td>logo</td>
+                <td>h²</td>
+                <td>=</td>
+                <td id="r3">.</td>
+                <td>logo</td>
+                <td>h</td>
+                <td>=</td>
+                <td>raiz quadrada de</td>
+                <td id="r4">.</td>
+                <td>=</td>
+            </tr>
+        </table>
+        <h1 id="r5">.</h1>
+    </div>
+
+    <div id="ex2" class="modal">
+        <ol>
+            <li><b>Insira os valores para verde e roxo hipotenusa na calculadora.</b></li>
+            <li><b>Como pode ver no TRIANGULO_RETANGULO_CSS o valor verde é menor que o roxo, esta é uma regra.</b></li>
+            <li><b>Após inserir os valores clique no botão calcular da calculadora.</b></li>
+            <li><b>Após calcular clique no botão Resultado da calculadora.</b></li>
+            <li><b>A frase de pitagoras: A maioria dos homens e mulheres, por nascimento ou natureza, não tem meios para avançar em riqueza ou poder, mas todos têm a capacidade de avançar no conhecimento.</b></li>
+        </ol>
+    </div>
+
+    <table>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>
+                <h2>Contate-me</h2>
+                <ul>
+                    <li> Zap: 71991742460</li>
+                    <li> Email: herbertleitesoares@gmail.com</li>
+                </ul>
+            </td>
+        </tr>
+
+    </table>
+    <p><b>@ Todos os direitos reservados https://github.com/herbertleite</b></p>
+
+    <script>
+        function verifica() {
+            var verde = Number(document.getElementById("valor1").value);
+            var roxo = Number(document.getElementById("valor2").value);
+            if (verde == '') {
+                alert("Preenchimento do valor verde é obrigatório ");
+            } else if (roxo == '') {
+                alert("Preenchimento do valor roxo é obrigatório ");
+            } else if (verde > roxo) {
+                alert("O valor verde não pode ser maior que o valor roxo ");
+                window.location.reload(this)
+            } else
+                alert("Calculado com sucesso");
+        }
+
+        function resultado() {
+            var result = document.getElementById("r5").innerHTML;
+            if (result == '.' || result == -0.5 || result == isNaN) {
+                alert("Você deve calcular antes ");
+                //window.close(this)
+                window.location.reload(this)
+            }
+        }
+    </script>
+</body>
+
+</html>
